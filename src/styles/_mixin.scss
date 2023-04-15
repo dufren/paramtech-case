@@ -1,0 +1,27 @@
+@import "./breakpoints";
+
+@mixin listTemplate {
+  display: grid;
+  text-align: center;
+  padding: 30px;
+
+  @include sm-breakpoint() {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  @include lg-breakpoint() {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

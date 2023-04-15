@@ -9,6 +9,8 @@ import { store } from "./app/store";
 //react-router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import "./styles/main.scss";
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
