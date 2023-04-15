@@ -5,6 +5,7 @@ import Payment from "./pages/Payment";
 import Layout from "./components/Layout";
 import RequireAuth from "./utils/RequireAuth";
 import Success from "./pages/Success";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/packages" element={<PackageList />} />
           <Route path="/cart" element={<Payment />} />
           <Route path="/success" element={<Success />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Route>
     </Routes>

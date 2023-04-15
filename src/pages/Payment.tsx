@@ -55,7 +55,6 @@ export default function Payment() {
         <h1 className="payment__container__left__title">Kart Bilgileri</h1>
         <Form
           name="basic"
-          style={{ maxWidth: 1000 }}
           initialValues={{ remember: true }}
           autoComplete="off"
           className="payment__container__left__form"
