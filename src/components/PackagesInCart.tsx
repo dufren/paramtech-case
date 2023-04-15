@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { PackagesInCartProps } from "../types/types";
+import { PackageType, PackagesInCartProps } from "../types/types";
 import { useSendPaymentMutation } from "../app/api/apiSlice";
 import { useEffect } from "react";
 import { Button, message } from "antd";
@@ -10,7 +10,7 @@ import {
   EXP_REGEX,
   NAME_REGEX,
 } from "../utils/RegexSchemas";
-import { paymentReset } from "../features/cartSlice";
+import { addToCart, paymentReset } from "../features/cartSlice";
 
 export default function PackagesInCart({ paymentInfo }: PackagesInCartProps) {
   const cart = useAppSelector((store) => store.cart.cart);
@@ -33,6 +33,11 @@ export default function PackagesInCart({ paymentInfo }: PackagesInCartProps) {
       message.warning(`${error}`);
     }
   }, [isSuccess]);
+
+  const removeHandle = (packageItem: PackageType) => {
+    dispatch(addToCart(packageItem));
+    message.warning(`${packageItem.name} çıkartıldı!`);
+  };
 
   const canSave = () => {
     const isNameValid = NAME_REGEX.test(paymentInfo.cardHolderName);
@@ -71,6 +76,9 @@ export default function PackagesInCart({ paymentInfo }: PackagesInCartProps) {
             key={packageItem.id}
             className="payment__container__right__package"
           >
+            <Button onClick={() => removeHandle(packageItem)} type="primary">
+              -
+            </Button>
             <h1>{packageItem.name}</h1>
             <h1>
               {packageItem.amount} <span>{packageItem.currency}</span>

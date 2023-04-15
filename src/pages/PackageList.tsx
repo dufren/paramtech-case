@@ -22,11 +22,11 @@ export default function Packages() {
   if (isLoading || isFetching) content = <Loading />;
 
   if (isSuccess) {
-    content = data.map((paket) => (
+    content = data.map((packageItem) => (
       <Package
-        key={paket.id}
-        paket={paket}
-        inCart={cartList.some((p) => p.id === paket.id)}
+        key={packageItem.id}
+        packageItem={packageItem}
+        inCart={cartList.some((p) => p.id === packageItem.id)}
       />
     ));
   }

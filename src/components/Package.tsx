@@ -7,19 +7,19 @@ import { addToCart } from "../features/cartSlice";
 import { message, Card } from "antd";
 
 type packagePropType = {
-  paket: PackageType;
+  packageItem: PackageType;
   inCart: boolean;
 };
 
-export default function Package({ paket, inCart }: packagePropType) {
+export default function Package({ packageItem, inCart }: packagePropType) {
   const dispatch = useAppDispatch();
 
   const addToCartHandle = () => {
-    dispatch(addToCart(paket));
+    dispatch(addToCart(packageItem));
     if (inCart) {
-      message.warning("Ürün Çıkartıldı");
+      message.warning(`${packageItem.name} çıkartıldı!`);
     } else {
-      message.success("Ürün eklendi");
+      message.success(`${packageItem.name} eklendi!`);
     }
   };
 
@@ -31,19 +31,19 @@ export default function Package({ paket, inCart }: packagePropType) {
       <div className="package__container">
         <img
           className="package__container__img"
-          src={paket.imagePath}
-          alt={paket.name}
+          src={packageItem.imagePath}
+          alt={packageItem.name}
         />
         <div className="package__container__content">
           <div className="package__container__content__title">
-            <h1>{paket.name}</h1>
+            <h1>{packageItem.name}</h1>
             <h1>
-              {paket.amount}
-              {paket.currency}
+              {packageItem.amount}
+              {packageItem.currency}
             </h1>
           </div>
           <div className="package__container__content__details">
-            {paket.details.map((detail, index) => (
+            {packageItem.details.map((detail, index) => (
               <ul key={index}>
                 <li>{detail}</li>
               </ul>
@@ -53,7 +53,7 @@ export default function Package({ paket, inCart }: packagePropType) {
           <hr />
 
           <div className="package__container__content__tags">
-            {paket.tags.map((tag, index) => (
+            {packageItem.tags.map((tag, index) => (
               <ul key={index}>
                 <li>{tag}</li>
               </ul>
