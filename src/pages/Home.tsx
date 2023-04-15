@@ -1,4 +1,4 @@
-import "../styles/_home.scss";
+import "../styles/pageStyles/_home.scss";
 
 import React, { useEffect } from "react";
 

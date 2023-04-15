@@ -1,0 +1,41 @@
+@import "../mixin";
+
+.package {
+  border: 2px solid #d1d5db;
+  transition: transform 0.3s ease;
+
+  &.selected {
+    border: 2px rgb(34, 182, 34) solid;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .package__container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    &__img {
+      width: 100%;
+      max-width: 300px;
+      max-height: 250px;
+      border-radius: 4px;
+    }
+
+    &__content {
+      &__title {
+        @include flexSpaceBetween();
+      }
+
+      &__details {
+        @include flexCenter();
+      }
+
+      &__tags {
+        @include flexCenter();
+      }
+    }
+  }
+}

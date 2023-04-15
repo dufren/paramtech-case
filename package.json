@@ -12,13 +12,16 @@
     "@ant-design/icons": "^5.0.1",
     "@reduxjs/toolkit": "^1.9.3",
     "antd": "^5.4.2",
+    "cleave.js": "^1.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.10.0",
+    "react-spinners": "^0.13.8",
     "sass": "^1.62.0"
   },
   "devDependencies": {
+    "@types/cleave.js": "^1.4.7",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",

@@ -17,7 +17,7 @@ const initialState: InitialStateType = {
   cartTotal: initialStateLocal === null ? 0 : initialStateLocal.cartTotal,
 };
 
-const packagesSlice = createSlice({
+const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
@@ -44,6 +44,6 @@ const packagesSlice = createSlice({
   },
 });
 
-export const { addToCart, paymentReset } = packagesSlice.actions;
+export const { addToCart, paymentReset } = cartSlice.actions;
 
-export default packagesSlice.reducer;
+export default cartSlice.reducer;

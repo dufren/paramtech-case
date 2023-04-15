@@ -1,8 +1,11 @@
-// Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { FormValuesType, PackagesResponseType } from "../../types/types";
+import {
+  FormValuesType,
+  PackagesResponseType,
+  PaymentDataType,
+  PaymentResponseType,
+} from "../../types/types";
 
-// Define a service using a base URL and expected endpoints
 export const apiSlice = createApi({
   reducerPath: "apiSlice",
   baseQuery: fetchBaseQuery({
@@ -21,7 +24,24 @@ export const apiSlice = createApi({
     getPackages: builder.query<PackagesResponseType, undefined>({
       query: () => "/api/packages",
     }),
+    getPaymentContent: builder.query<PaymentResponseType, undefined>({
+      query: () => "/api/payment",
+    }),
+    SendPayment: builder.mutation({
+      query: (paymentData: PaymentDataType) => ({
+        url: "/api/payment",
+        method: "POST",
+        body: {
+          ...paymentData,
+        },
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation, useGetPackagesQuery } = apiSlice;
+export const {
+  useLoginMutation,
+  useGetPackagesQuery,
+  useGetPaymentContentQuery,
+  useSendPaymentMutation,
+} = apiSlice;

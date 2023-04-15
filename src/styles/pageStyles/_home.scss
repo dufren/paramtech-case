@@ -1,0 +1,21 @@
+@import "../breakpoints";
+
+.login__container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__form {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    padding: 35px;
+    width: 300px;
+
+    &__btn button {
+      width: 100%;
+    }
+  }
+}

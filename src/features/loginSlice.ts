@@ -7,12 +7,10 @@ type InitialStateType = {
   isLoggedIn: boolean;
 };
 
-const initialStateLocal = // checking localStorage to keep data in cache
-  localStorage.getItem("loginState") !== null
-    ? JSON.parse(localStorage.getItem("loginState") || "")
+const initialStateLocal =
+  sessionStorage.getItem("loginState") !== null
+    ? JSON.parse(sessionStorage.getItem("loginState") || "")
     : null;
-
-console.log(initialStateLocal);
 
 const initialState: InitialStateType = {
   userInfo: initialStateLocal === null ? {} : initialStateLocal.userInfo,
@@ -27,7 +25,7 @@ const loginSlice = createSlice({
       state.userInfo = action.payload;
       state.isLoggedIn = true;
 
-      localStorage.setItem("cartState", JSON.stringify(state));
+      sessionStorage.setItem("loginState", JSON.stringify(state));
     },
   },
 });

@@ -1,0 +1,97 @@
+@import "../mixin";
+
+.payment__container {
+  display: flex;
+  justify-content: space-around;
+  gap: 25px;
+  margin: 50px 100px;
+
+  @include md-breakpoint2() {
+    flex-direction: column;
+  }
+
+  &__left {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 0px 25px;
+    width: fit-content;
+    &__title {
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    &__form {
+      border: 2px solid #d1d5db;
+      border-radius: 5px;
+      background-color: #fff;
+      padding: 10px;
+
+      &__input {
+        padding: 4px 11px;
+        border: 1px solid #d9d9d9;
+        border-radius: 6px;
+        transition: border 0.3s ease;
+        line-height: 1.5714285714285714;
+        width: 100%;
+
+        &:hover {
+          border: 1px solid #4096ff;
+        }
+      }
+
+      &__row {
+        gap: 20px;
+      }
+    }
+
+    &__aggrement {
+      &__title {
+        font-size: 24px;
+        font-weight: 400;
+      }
+
+      &__content {
+        border: 2px solid #d1d5db;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 4px 11px;
+      }
+    }
+  }
+
+  &__right {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 0 25px 25px 25px;
+    height: fit-content;
+    width: fit-content;
+    &__title {
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    &__package {
+      display: flex;
+      justify-content: space-between;
+      border: 2px solid #d1d5db;
+      border-radius: 5px;
+      background-color: #fff;
+      padding: 0 15px;
+      margin-bottom: 10px;
+      width: 100%;
+
+      h1 {
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+    &__empty {
+      text-align: center;
+    }
+
+    &__btn {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+}

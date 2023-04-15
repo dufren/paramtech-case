@@ -14,3 +14,25 @@ export type PackageType = {
 };
 
 export type PackagesResponseType = PackageType[];
+
+export type PaymentResponseType = {
+  content: string;
+};
+
+export type PaymentDataType = {
+  packageIds: string[];
+  cardHolderName: string;
+  cardNumber: string;
+  expireDate: string;
+  cvv: string;
+  totalAmount: number;
+};
+
+export type PackagesInCartProps = {
+  paymentInfo: {
+    cardHolderName: string;
+    cardNumber: string;
+    expireDate: string;
+    cvv: string;
+  };
+};

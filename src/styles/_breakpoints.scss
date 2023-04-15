@@ -7,7 +7,13 @@ $xlBreakpoint: 1536px;
 
 // breakpoint mixins
 @mixin xs-breakpoint {
-  @media (min-width: $xsBreakpoint) {
+  @media (max-width: $xsBreakpoint) {
+    @content;
+  }
+}
+
+@mixin sm-breakpoint2 {
+  @media (max-width: $smBreakpoint) {
     @content;
   }
 }
@@ -20,6 +26,12 @@ $xlBreakpoint: 1536px;
 
 @mixin md-breakpoint {
   @media (min-width: $mdBreakpoint) {
+    @content;
+  }
+}
+
+@mixin md-breakpoint2 {
+  @media (max-width: $mdBreakpoint) {
     @content;
   }
 }

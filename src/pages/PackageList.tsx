@@ -1,11 +1,12 @@
-import "../styles/_packages.scss";
-
+import "../styles/pageStyles/_packageList.scss";
 import React from "react";
 import { useGetPackagesQuery } from "../app/api/apiSlice";
 import Package from "../components/Package";
 import { useAppSelector } from "../app/hooks";
 import { useNavigate } from "react-router-dom";
 import { Button } from "antd";
+import Loading from "../components/Loading";
+import Error from "../components/Error";
 
 export default function Packages() {
   const { data, isLoading, isFetching, isSuccess } =
@@ -13,12 +14,12 @@ export default function Packages() {
 
   const navigate = useNavigate();
 
-  const total = useAppSelector((store) => store.packages.cartTotal);
-  const cartList = useAppSelector((store) => store.packages.cart);
+  const total = useAppSelector((store) => store.cart.cartTotal);
+  const cartList = useAppSelector((store) => store.cart.cart);
 
   let content;
 
-  if (isLoading || isFetching) content = <div>Yükleniyor...</div>;
+  if (isLoading || isFetching) content = <Loading />;
 
   if (isSuccess) {
     content = data.map((paket) => (
@@ -32,9 +33,10 @@ export default function Packages() {
 
   return (
     (
-      <div>
-        <div className="packages">{content}</div>
-        <div className="footer">
+      <div className="main__container">
+        <div className="main__container__packageList">{content}</div>
+        <hr />
+        <div className="main__container__footer">
           <h1>
             Cart Total <span>{total}</span>₺
           </h1>
@@ -44,6 +46,6 @@ export default function Packages() {
           </Button>
         </div>
       </div>
-    ) ?? <div>Hata Oluştu.</div>
+    ) ?? <Error />
   );
 }

@@ -1,0 +1,32 @@
+@import "../mixin";
+
+.main__container {
+  &__packageList {
+    @include listTemplate();
+    gap: 50px;
+  }
+
+  hr {
+    width: 80%;
+  }
+
+  &__footer {
+    @include flexSpaceBetween();
+
+    padding: 10px;
+    h1 {
+      font-size: 44px;
+      font-weight: 400;
+    }
+
+    button {
+      @include flexCenter;
+      padding: 25px;
+      font-size: 24px;
+    }
+
+    @include sm-breakpoint2() {
+      flex-direction: column;
+    }
+  }
+}

@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Packages from "./pages/Packages";
-import Cart from "./pages/Cart";
+import PackageList from "./pages/PackageList";
+import Payment from "./pages/Payment";
 import Layout from "./components/Layout";
-import RequireAuth from "./components/RequireAuth";
+import RequireAuth from "./utils/RequireAuth";
+import Success from "./pages/Success";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route element={<RequireAuth />}>
         <Route element={<Layout />}>
-          <Route path="/packages" element={<Packages />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/packages" element={<PackageList />} />
+          <Route path="/cart" element={<Payment />} />
+          <Route path="/success" element={<Success />} />
         </Route>
       </Route>
     </Routes>
