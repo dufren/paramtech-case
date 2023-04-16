@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { PackagesInCartProps } from "../types/types";
+import { paymentInfoType } from "../types/types";
 import { useSendPaymentMutation } from "../app/api/apiSlice";
 import { useEffect } from "react";
 import { Button, message } from "antd";
@@ -12,11 +12,20 @@ import {
 } from "../utils/RegexSchemas";
 import { paymentReset } from "../features/cartSlice";
 import PackageInLine from "./PackageInLine";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
-export default function PackagesInCart({ paymentInfo }: PackagesInCartProps) {
+type PackagesInCartPropsType = {
+  paymentInfo: paymentInfoType;
+};
+
+export default function PackagesInCart({
+  paymentInfo,
+}: PackagesInCartPropsType) {
   const cart = useAppSelector((store) => store.cart.cart);
   const cartTotal = useAppSelector((store) => store.cart.cartTotal);
   const packageIds = cart.map((packageItem) => String(packageItem.id));
+
+  const [parent] = useAutoAnimate();
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -35,7 +44,7 @@ export default function PackagesInCart({ paymentInfo }: PackagesInCartProps) {
     }
   }, [isSuccess]);
 
-  const canSave = () => {
+  const canSaveHandle = () => {
     const isNameValid = NAME_REGEX.test(paymentInfo.cardHolderName);
     const isCardNumberValid = CARD_REGEX.test(paymentInfo.cardNumber);
     const isExpDateValid = EXP_REGEX.test(paymentInfo.expireDate);
@@ -62,22 +71,25 @@ export default function PackagesInCart({ paymentInfo }: PackagesInCartProps) {
     });
   };
 
+  const content =
+    cart.length > 0 ? (
+      cart.map((packageItem) => (
+        <PackageInLine key={packageItem.id} packageItem={packageItem} />
+      ))
+    ) : (
+      <div className="payment__container__right__empty">Sepet boş</div>
+    );
+
   return (
     <div>
       <h1 className="payment__container__right__title">Sepetteki Paketler</h1>
 
-      {cart.length > 0 ? (
-        cart.map((packageItem) => (
-          <PackageInLine key={packageItem.id} packageItem={packageItem} />
-        ))
-      ) : (
-        <div className="payment__container__right__empty">Sepet boş</div>
-      )}
+      <div ref={parent}>{content}</div>
       {
         <Button
           onClick={handlePayment}
           loading={isLoading}
-          disabled={!canSave()}
+          disabled={!canSaveHandle()}
           className="payment__container__right__btn"
           type="primary"
         >

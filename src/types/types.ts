@@ -34,7 +34,3 @@ export type paymentInfoType = {
   expireDate: string;
   cvv: string;
 };
-
-export type PackagesInCartProps = {
-  paymentInfo: paymentInfoType;
-};

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
+    "@formkit/auto-animate": "^1.0.0-beta.6",
     "@reduxjs/toolkit": "^1.9.3",
     "antd": "^5.4.2",
     "cleave.js": "^1.6.0",
