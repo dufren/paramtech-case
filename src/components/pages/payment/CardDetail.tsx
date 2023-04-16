@@ -9,7 +9,7 @@ import {
 } from "../../../utils/RegexSchemas";
 import { paymentInfoType } from "../../../types/types";
 
-import "../styles/pageStyles/_payment.scss";
+import "../../../styles/pageStyles/_payment.scss";
 
 type CardDetailPropsType = {
   paymentInfo: paymentInfoType;

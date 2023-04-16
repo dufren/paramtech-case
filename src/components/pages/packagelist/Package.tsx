@@ -1,4 +1,4 @@
-import "../styles/componentStyles/_package.scss";
+import "../../../styles/componentStyles/_package.scss";
 import React from "react";
 import { PackageType } from "../../../types/types";
 import { useAppDispatch } from "../../../app/hooks";

@@ -1,4 +1,4 @@
-import "../styles/pageStyles/_home.scss";
+import "../../../styles/pageStyles/_home.scss";
 import React, { useEffect, useState } from "react";
 import { useLoginMutation } from "../../../app/api/apiSlice";
 import { getLoginData } from "../../../features/loginSlice";

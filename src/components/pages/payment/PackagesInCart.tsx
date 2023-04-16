@@ -42,7 +42,7 @@ export default function PackagesInCart({
     if (isError) {
       message.warning(`${error}`);
     }
-  }, [isSuccess]);
+  }, [isSuccess, isError]);
 
   const canSaveHandle = () => {
     const isNameValid = NAME_REGEX.test(paymentInfo.cardHolderName);
