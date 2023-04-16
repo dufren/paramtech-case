@@ -1,9 +1,9 @@
-import "../styles/componentStyles/_header.scss";
+import "../../styles/componentStyles/_header.scss";
 import React from "react";
-import { useAppSelector } from "../app/hooks";
+import { useAppSelector } from "../../app/hooks";
 import { Link } from "react-router-dom";
 import { UserOutlined } from "@ant-design/icons";
-import logo from "../assets/logo.svg";
+import logo from "../../assets/logo.svg";
 
 export default function Header() {
   const fullName = useAppSelector((store) => store.login.userInfo);

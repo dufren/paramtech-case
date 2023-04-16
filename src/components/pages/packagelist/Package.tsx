@@ -2,7 +2,7 @@ import "../../../styles/componentStyles/_package.scss";
 import React from "react";
 import { PackageType } from "../../../types/types";
 import { useAppDispatch } from "../../../app/hooks";
-import { addToCart } from "../../../features/cartSlice";
+import { toggleItem } from "../../../features/cartSlice";
 
 import { message, Card } from "antd";
 
@@ -14,8 +14,8 @@ type packagePropsType = {
 export default function Package({ packageItem, inCart }: packagePropsType) {
   const dispatch = useAppDispatch();
 
-  const addToCartHandle = () => {
-    dispatch(addToCart(packageItem));
+  const toggleItemHandle = () => {
+    dispatch(toggleItem(packageItem));
     if (inCart) {
       message.warning(`${packageItem.name} çıkartıldı!`);
     } else {
@@ -25,7 +25,7 @@ export default function Package({ packageItem, inCart }: packagePropsType) {
 
   return (
     <Card
-      onClick={addToCartHandle}
+      onClick={toggleItemHandle}
       className={`package ${inCart ? "selected" : ""}`}
     >
       <div className="package__container">

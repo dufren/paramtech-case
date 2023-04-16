@@ -35,10 +35,11 @@ export default function Cart({ paymentInfo }: CartPropsType) {
     if (isSuccess) {
       dispatch(paymentReset());
       localStorage.clear();
-      navigate("/success");
+      navigate("/cart/success");
     }
     if (isError) {
       message.warning(`${error}`);
+      navigate("/cart/error");
     }
   }, [isSuccess, isError]);
 

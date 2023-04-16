@@ -2,7 +2,7 @@ import React from "react";
 import { PackageType } from "../../../types/types";
 import { Button, message } from "antd";
 import { useAppDispatch } from "../../../app/hooks";
-import { addToCart } from "../../../features/cartSlice";
+import { toggleItem } from "../../../features/cartSlice";
 
 type PackageInLinePropsType = {
   packageItem: PackageType;
@@ -12,7 +12,7 @@ export default function PackageInLine({ packageItem }: PackageInLinePropsType) {
   const dispatch = useAppDispatch();
 
   const removeHandle = (packageItem: PackageType) => {
-    dispatch(addToCart(packageItem));
+    dispatch(toggleItem(packageItem));
     message.warning(`${packageItem.name} çıkartıldı!`);
   };
 

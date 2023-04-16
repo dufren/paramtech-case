@@ -21,7 +21,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart: (state, action: PayloadAction<PackageType>) => {
+    toggleItem: (state, action: PayloadAction<PackageType>) => {
       const { id, amount } = action.payload;
       const isPackageInCart = state.cart.some((item) => item.id === id);
 
@@ -44,6 +44,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, paymentReset } = cartSlice.actions;
+export const { toggleItem, paymentReset } = cartSlice.actions;
 
 export default cartSlice.reducer;

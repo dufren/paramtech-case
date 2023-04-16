@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useGetPaymentContentQuery } from "../../../app/api/apiSlice";
-import Error from "../../Error";
-import Loading from "../../Loading";
+import Error from "../../sections/Error";
+import Loading from "../../sections/Loading";
 
 export default function Aggrement() {
   const { data, isLoading, isSuccess, isFetching } =

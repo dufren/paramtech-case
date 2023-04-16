@@ -3,7 +3,7 @@ import React from "react";
 import { useGetPackagesQuery } from "../app/api/apiSlice";
 import Package from "../components/pages/packagelist/Package";
 import { useAppSelector } from "../app/hooks";
-import Loading from "../components/Loading";
+import Loading from "../components/sections/Loading";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import Footer from "../components/pages/packagelist/Footer";
 
