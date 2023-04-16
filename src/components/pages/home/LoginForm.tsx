@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useLoginMutation } from "../../../app/api/apiSlice";
 import { getLoginData } from "../../../features/loginSlice";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Form, Input, message } from "antd";
+import { Button, Col, Form, Input, message } from "antd";
 import { FormValuesType } from "../../../types/types";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../../app/hooks";
@@ -61,41 +61,52 @@ export default function Home() {
         initialValues={{ remember: true }}
         onFinish={onFinish}
       >
-        <Form.Item
-          name="fullName"
-          rules={[
-            { required: true, message: "Lütfen adınızı soyadınızı giriniz!" },
-            {
-              pattern: NAME_REGEX,
-              message: "Lütfen geçerli bir isim giriniz",
-            },
-          ]}
-        >
-          <Input
-            placeholder="Adınız Soyadınız"
-            prefix={<UserOutlined className="site-form-item-icon" />}
-            onChange={onFullNameChanged}
-            value={fullName}
-          />
-        </Form.Item>
-        <Form.Item
-          name="email"
-          rules={[
-            { required: true, message: "Lütfen email adresinizi giriniz!" },
-            {
-              pattern: EMAIL_REGEX,
-              message: "Lütfen geçerli bir mail giriniz",
-            },
-          ]}
-        >
-          <Input
-            placeholder="Email Adresiniz"
-            prefix={<LockOutlined className="site-form-item-icon" />}
-            onChange={onEmailChanged}
-            value={email}
-            type="email"
-          />
-        </Form.Item>
+        <Col>
+          <label>Adınız Soyadınız</label>
+
+          <Form.Item
+            name="fullName"
+            rules={[
+              { required: true, message: "Lütfen adınızı soyadınızı giriniz!" },
+              {
+                pattern: NAME_REGEX,
+                message: "Lütfen geçerli bir isim giriniz",
+              },
+            ]}
+            hasFeedback
+          >
+            <Input
+              placeholder="Adınız Soyadınız"
+              prefix={<UserOutlined className="site-form-item-icon" />}
+              onChange={onFullNameChanged}
+              value={fullName}
+            />
+          </Form.Item>
+        </Col>
+
+        <Col>
+          <label>Email Adresiniz</label>
+
+          <Form.Item
+            name="email"
+            rules={[
+              { required: true, message: "Lütfen email adresinizi giriniz!" },
+              {
+                pattern: EMAIL_REGEX,
+                message: "Lütfen geçerli bir mail giriniz",
+              },
+            ]}
+            hasFeedback
+          >
+            <Input
+              placeholder="Email Adresiniz"
+              prefix={<LockOutlined className="site-form-item-icon" />}
+              onChange={onEmailChanged}
+              value={email}
+              type="email"
+            />
+          </Form.Item>
+        </Col>
 
         <Form.Item className="login__container__form__btn">
           <Button

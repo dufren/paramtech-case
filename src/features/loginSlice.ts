@@ -8,8 +8,8 @@ type InitialStateType = {
 };
 
 const initialStateLocal =
-  localStorage.getItem("loginState") !== null
-    ? JSON.parse(localStorage.getItem("loginState") || "")
+  sessionStorage.getItem("loginState") !== null
+    ? JSON.parse(sessionStorage.getItem("loginState") || "")
     : null;
 
 const initialState: InitialStateType = {
@@ -25,7 +25,7 @@ const loginSlice = createSlice({
       state.userInfo = action.payload;
       state.isLoggedIn = true;
 
-      localStorage.setItem("loginState", JSON.stringify(state));
+      sessionStorage.setItem("loginState", JSON.stringify(state));
     },
   },
 });
