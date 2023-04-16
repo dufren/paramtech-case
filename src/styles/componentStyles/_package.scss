@@ -25,6 +25,11 @@
     }
 
     &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
       &__title {
         @include flexSpaceBetween();
       }
@@ -35,6 +40,15 @@
 
       &__tags {
         @include flexCenter();
+        ul {
+          list-style-type: none;
+
+          li {
+            padding: 6px;
+            background-color: #d6d6d6;
+            border-radius: 4px;
+          }
+        }
       }
     }
   }
