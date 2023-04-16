@@ -44,9 +44,7 @@ export default function Package({ packageItem, inCart }: packagePropsType) {
           </div>
           <div className="package__container__content__details">
             {packageItem.details.map((detail, index) => (
-              <ul key={index}>
-                <li>{detail}</li>
-              </ul>
+              <p key={index}>{detail}</p>
             ))}
           </div>
 
@@ -54,9 +52,7 @@ export default function Package({ packageItem, inCart }: packagePropsType) {
 
           <div className="package__container__content__tags">
             {packageItem.tags.map((tag, index) => (
-              <ul key={index}>
-                <li>{tag}</li>
-              </ul>
+              <p key={index}>{tag}</p>
             ))}
           </div>
         </div>

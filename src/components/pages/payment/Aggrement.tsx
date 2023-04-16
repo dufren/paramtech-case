@@ -22,12 +22,12 @@ export default function Aggrement() {
   if (!data) return <Error />;
 
   return (
-    <div>
+    <>
       <h1 className="payment__container__left__aggrement__title">Sözleşme</h1>
       <p
         className="payment__container__left__aggrement__content"
         dangerouslySetInnerHTML={{ __html: agreementForm }}
       />
-    </div>
+    </>
   );
 }

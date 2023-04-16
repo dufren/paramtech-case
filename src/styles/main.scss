@@ -7,12 +7,13 @@ body {
   margin: 0;
   box-sizing: border-box;
   background-color: #e5e7eb;
-  font-family: $Prompt;
-  font-weight: 400;
+  min-width: fit-content;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: $Prompt;
+  font-weight: 400;
 }

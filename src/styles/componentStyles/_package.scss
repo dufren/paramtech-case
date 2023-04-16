@@ -25,29 +25,31 @@
     }
 
     &__content {
-      display: flex;
+      @include flexCenter();
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
 
       &__title {
         @include flexSpaceBetween();
+        gap: 50px;
+
+        h1 {
+          font-weight: 500;
+        }
       }
 
       &__details {
-        @include flexCenter();
+        @include flexSpaceBetween();
+        width: 100%;
       }
 
       &__tags {
-        @include flexCenter();
-        ul {
-          list-style-type: none;
+        @include flexSpaceBetween();
+        width: 100%;
 
-          li {
-            padding: 6px;
-            background-color: #d6d6d6;
-            border-radius: 4px;
-          }
+        p {
+          background-color: #d6d3d3;
+          padding: 4px;
+          border-radius: 4px;
         }
       }
     }

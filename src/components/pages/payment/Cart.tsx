@@ -14,13 +14,11 @@ import { paymentReset } from "../../../features/cartSlice";
 import PackageInLine from "./PackageInLine";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 
-type PackagesInCartPropsType = {
+type CartPropsType = {
   paymentInfo: paymentInfoType;
 };
 
-export default function PackagesInCart({
-  paymentInfo,
-}: PackagesInCartPropsType) {
+export default function Cart({ paymentInfo }: CartPropsType) {
   const cart = useAppSelector((store) => store.cart.cart);
   const cartTotal = useAppSelector((store) => store.cart.cartTotal);
   const packageIds = cart.map((packageItem) => String(packageItem.id));
@@ -81,7 +79,7 @@ export default function PackagesInCart({
     );
 
   return (
-    <div>
+    <>
       <h1 className="payment__container__right__title">Sepetteki Paketler</h1>
 
       <div ref={parent}>{content}</div>
@@ -96,6 +94,6 @@ export default function PackagesInCart({
           Ödeme Yap
         </Button>
       }
-    </div>
+    </>
   );
 }

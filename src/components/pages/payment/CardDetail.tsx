@@ -24,7 +24,7 @@ export default function CardDetail({
     setPaymentInfo({ ...paymentInfo, [e.target.name]: e.target.value });
 
   return (
-    <div>
+    <>
       <h1 className="payment__container__left__title">Kart Bilgileri</h1>
       <Form
         name="basic"
@@ -148,6 +148,6 @@ export default function CardDetail({
           </Col>
         </Row>
       </Form>
-    </div>
+    </>
   );
 }
