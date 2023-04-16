@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { paymentInfoType } from "../types/types";
-import { useSendPaymentMutation } from "../app/api/apiSlice";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { paymentInfoType } from "../../../types/types";
+import { useSendPaymentMutation } from "../../../app/api/apiSlice";
 import { useEffect } from "react";
 import { Button, message } from "antd";
 import {
@@ -9,8 +9,8 @@ import {
   CVV_REGEX,
   EXP_REGEX,
   NAME_REGEX,
-} from "../utils/RegexSchemas";
-import { paymentReset } from "../features/cartSlice";
+} from "../../../utils/RegexSchemas";
+import { paymentReset } from "../../../features/cartSlice";
 import PackageInLine from "./PackageInLine";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 

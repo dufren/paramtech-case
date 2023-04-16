@@ -1,7 +1,7 @@
 import "../styles/pageStyles/_packageList.scss";
 import React from "react";
 import { useGetPackagesQuery } from "../app/api/apiSlice";
-import Package from "../components/Package";
+import Package from "../components/pages/packagelist/Package";
 import { useAppSelector } from "../app/hooks";
 import { useNavigate } from "react-router-dom";
 import { Button } from "antd";

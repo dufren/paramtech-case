@@ -10,6 +10,7 @@ export default function Success() {
       navigate("/packages");
     }, 5000);
   }, []);
+
   return (
     <div>
       <Result

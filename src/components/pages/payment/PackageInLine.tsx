@@ -1,8 +1,8 @@
 import React from "react";
-import { PackageType } from "../types/types";
+import { PackageType } from "../../../types/types";
 import { Button, message } from "antd";
-import { useAppDispatch } from "../app/hooks";
-import { addToCart } from "../features/cartSlice";
+import { useAppDispatch } from "../../../app/hooks";
+import { addToCart } from "../../../features/cartSlice";
 
 type PackageInLinePropsType = {
   packageItem: PackageType;

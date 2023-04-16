@@ -1,13 +1,13 @@
 import "../styles/pageStyles/_home.scss";
 import React, { useEffect, useState } from "react";
-import { useLoginMutation } from "../app/api/apiSlice";
-import { getLoginData } from "../features/loginSlice";
+import { useLoginMutation } from "../../../app/api/apiSlice";
+import { getLoginData } from "../../../features/loginSlice";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input, message } from "antd";
-import { FormValuesType } from "../types/types";
+import { FormValuesType } from "../../../types/types";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../app/hooks";
-import { EMAIL_REGEX, NAME_REGEX } from "../utils/RegexSchemas";
+import { useAppDispatch } from "../../../app/hooks";
+import { EMAIL_REGEX, NAME_REGEX } from "../../../utils/RegexSchemas";
 
 export default function Home() {
   const [login, { isLoading, isSuccess, isError, error }] = useLoginMutation();

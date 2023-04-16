@@ -1,6 +1,6 @@
 import "../styles/pageStyles/_home.scss";
 import React, { useEffect } from "react";
-import LoginForm from "../components/LoginForm";
+import LoginForm from "../components/pages/home/LoginForm";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../app/hooks";
 

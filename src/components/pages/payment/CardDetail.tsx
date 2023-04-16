@@ -6,8 +6,8 @@ import {
   CVV_REGEX,
   EXP_REGEX,
   NAME_REGEX,
-} from "../utils/RegexSchemas";
-import { paymentInfoType } from "../types/types";
+} from "../../../utils/RegexSchemas";
+import { paymentInfoType } from "../../../types/types";
 
 import "../styles/pageStyles/_payment.scss";
 
