@@ -63,7 +63,7 @@ export default function PackagesInCart({ paymentInfo }: PackagesInCartProps) {
   };
 
   return (
-    <div className="payment__container__right">
+    <div>
       <h1 className="payment__container__right__title">Sepetteki Paketler</h1>
 
       {cart.length > 0 ? (

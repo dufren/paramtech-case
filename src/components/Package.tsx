@@ -6,12 +6,12 @@ import { addToCart } from "../features/cartSlice";
 
 import { message, Card } from "antd";
 
-type packagePropType = {
+type packagePropsType = {
   packageItem: PackageType;
   inCart: boolean;
 };
 
-export default function Package({ packageItem, inCart }: packagePropType) {
+export default function Package({ packageItem, inCart }: packagePropsType) {
   const dispatch = useAppDispatch();
 
   const addToCartHandle = () => {

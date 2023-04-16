@@ -7,7 +7,7 @@ type InitialStateType = {
   cartTotal: number;
 };
 
-const initialStateLocal = // checking localstorage to keep data in cache
+const initialStateLocal =
   localStorage.getItem("cartState") !== null
     ? JSON.parse(localStorage.getItem("cartState") || "")
     : null;

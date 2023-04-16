@@ -28,11 +28,13 @@ export type PaymentDataType = {
   totalAmount: number;
 };
 
+export type paymentInfoType = {
+  cardHolderName: string;
+  cardNumber: string;
+  expireDate: string;
+  cvv: string;
+};
+
 export type PackagesInCartProps = {
-  paymentInfo: {
-    cardHolderName: string;
-    cardNumber: string;
-    expireDate: string;
-    cvv: string;
-  };
+  paymentInfo: paymentInfoType;
 };

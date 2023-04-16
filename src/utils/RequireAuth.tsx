@@ -3,6 +3,7 @@ import { useAppSelector } from "../app/hooks";
 
 const RequireAuth = () => {
   const location = useLocation();
+
   const isLoggedIn = useAppSelector((store) => store.login.isLoggedIn);
 
   const content = isLoggedIn ? (
